@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./news-search.component.scss']
 })
 export class NewsSearchComponent implements OnInit {
-  @Output() inputChange = new EventEmitter<string>()
+  @Output() inputChange = new EventEmitter<number>()
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +14,6 @@ export class NewsSearchComponent implements OnInit {
 
   onInput(event: Event) {
     const value = (event.target as HTMLInputElement).value
-    this.inputChange.emit(value)
+    this.inputChange.emit(parseInt(value))
   }
 }

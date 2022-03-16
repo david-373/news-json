@@ -6,11 +6,11 @@ import { Post } from '../models';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(posts: Post[], searchTerm: string): Post[] {
-    if (!searchTerm.trim()) {
+  transform(posts: Post[], searchTerm: number): Post[] {
+    if (!searchTerm) {
       return posts
     }
-    return posts.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    return posts.filter(post => post.userId === searchTerm)
   }
 
 }

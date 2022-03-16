@@ -11,7 +11,7 @@ import { NewsService } from 'src/app/services/news.service';
   styleUrls: ['./news-list.component.scss']
 })
 export class NewsListComponent implements OnInit, OnDestroy {
-  public searchTerm: string = ''
+  public searchTerm!: number
   public posts!: Post[];
   private destroy$: Subject<boolean> = new Subject<boolean>();
   constructor(private newsService: NewsService,
@@ -41,7 +41,7 @@ export class NewsListComponent implements OnInit, OnDestroy {
   goToEditPage(id: number) {
     this.router.navigate(['/news', id])
   }
-  setSearchTerm(value: string) {
+  setSearchTerm(value: number) {
     this.searchTerm = value
   }
   deletePost(post: Post) {
