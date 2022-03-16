@@ -1,0 +1,28 @@
+<div class="header">
+    <span>
+        <h1>News</h1>
+    </span>
+    <button (click)="logout()" class="logout-btn">Logout</button>
+</div>
+<div class="search">
+    <app-news-search (inputChange)="setSearchTerm($event)"></app-news-search>
+</div>
+
+<div class="container">
+    <mat-card *ngFor=" let post of posts|filter:searchTerm;let i=index" class="item">
+        <mat-card-subtitle>
+            <span>{{i+1}}</span>
+            {{post.title}}
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>
+                {{post.body}}
+            </p>W
+        </mat-card-content>
+        <div class="buttons">
+            <button (click)="goToEditPage(post.id)">Edit</button>
+            <button (click)="deletePost(post)">Delete</button>
+        </div>
+
+    </mat-card>
+</div>

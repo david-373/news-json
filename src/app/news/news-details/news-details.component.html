@@ -1,0 +1,16 @@
+<div class="details" *ngIf="post">
+    <h1>Post with id:{{post.id}}</h1>
+    <form [formGroup]="editForm">
+        <mat-form-field appearance="fill" class="input">
+            <mat-label>Post title</mat-label>
+            <input matInput [value]="post.title" formControlName="title">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill" class="input">
+            <mat-label>Post body</mat-label>
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5" [value]="post.body" formControlName="body"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="editPost()">Change</button>
+    </form>
+
+</div>

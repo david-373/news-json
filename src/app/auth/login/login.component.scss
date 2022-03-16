@@ -1,0 +1,53 @@
+.log-container{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .error{
+    background-color: #ffcccc;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    
+     p{
+       margin: 0;
+       font-size: 18px;
+     }
+    span{
+      color: #ff0000;
+      font-size: 20px;
+      cursor: pointer;
+      margin: 0;
+      &:hover{
+        opacity: 0.3;
+      }
+    }
+  }
+
+::ng-deep {
+  .mat-raised-button.mat-primary{
+  //background-color: #3f51b5;
+  font-size: 18px;
+  padding: 8px 18px;
+  &:hover{
+    opacity: .3;
+  }
+}
+._mat-animation-noopable.mat-raised-button {
+  transition: 0.5s;
+}
+
+}
